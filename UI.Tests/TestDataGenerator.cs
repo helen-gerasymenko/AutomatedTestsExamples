@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Text;
 
 namespace Ui.Tests
 {
@@ -97,5 +99,38 @@ namespace Ui.Tests
 
 #endregion
 
+        public static string GetRandomEmail()
+        {
+            return $"{GetRandomString()}@mailinator.com";
+        }
+
+        public static string GetRandomPhoneNumber(bool useDashes)
+        {
+            var rand = new Random();
+            var telNumber = new StringBuilder(12);
+            int number;
+
+            for (int i = 0; i < 3; i++)
+            {
+                number = rand.Next(0, 8); // digit between 0 (incl) and 8 (excl)
+                telNumber = telNumber.Append(number.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (useDashes)
+                telNumber = telNumber.Append("-");
+            number = rand.Next(0, 743); // number between 0 (incl) and 743 (excl)
+            telNumber = telNumber.Append($"{number:D3}");
+
+            if (useDashes)
+                telNumber = telNumber.Append("-");
+            number = rand.Next(0, 10000); // number between 0 (incl) and 10000 (excl)
+            telNumber = telNumber.Append($"{number:D4}");
+            return telNumber.ToString(); 
+        }
+
+        public static string GetRandomWebsiteUrl()
+        {
+            return $"http://www.{GetRandomString()}.com";
+        }
     }
 }

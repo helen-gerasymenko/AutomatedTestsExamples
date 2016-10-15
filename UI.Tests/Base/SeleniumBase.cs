@@ -126,16 +126,10 @@ namespace UI.Tests.Base
             _driver.Navigate().Refresh();
         }
 
-        public static void SomeMethod(this IWebDriver driver, string name)
-        {
-
-        }
-
         public class CategorySmoke : CategoryAttribute
         {
             public CategorySmoke() : base("Smoke") { }
         }
 
-        
     }
 }
