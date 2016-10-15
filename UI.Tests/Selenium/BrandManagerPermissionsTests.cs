@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Ui.Tests;
 using UI.Tests.Base;
-using UI.Tests.Extensions;
 using UI.Tests.Pages.BackEnd;
 
 namespace UI.Tests.Selenium
@@ -123,7 +120,7 @@ namespace UI.Tests.Selenium
             Assert.IsTrue(brandManagerMenuItemVisible);
         }
 
-       
+
 
         protected override string GetWebsiteUrl()
         {

@@ -1,5 +1,4 @@
 using OpenQA.Selenium;
-using UI.Tests.Pages.BackEnd;
 
 namespace UI.Tests.Pages.BackEnd
 {
